@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FALLING ZERO - Build from nothing. Rise with purpose.">
+    <meta name="keywords" content="motivation, discipline, self-improvement, YouTube channel">
+    <title>FALLING ZERO - Build From Nothing</title>
+    <link rel="icon" href="./images/logo.jpg">
+    <link rel="apple-touch-icon" href="./images/logo.jpg">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+         :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --accent: #FF3333;
+            --accent-2: #ff6666;
+            --muted: #8a8a8a;
+            --gray: #999999;
+            --dark-gray: #1a1a1a;
+            --fs-h1: clamp(3rem, 8vw, 6rem);
+            --fs-h2: clamp(2rem, 5vw, 3.2rem);
+            --fs-h3: 1.25rem;
+            --max-width: 1400px;
+            --radius: 12px;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-size: 1rem;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+        /* ==================== NAVIGATION ==================== */
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .logo-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .brand-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-cta {
+            background: var(--accent);
+            padding: 0.7rem 1.8rem;
+            border-radius: 6px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
+        }
+        
+        .nav-cta:hover {
+            background: transparent;
+            border: 2px solid var(--accent);
+            padding: 0.6rem 1.7rem;
+            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.4);
+            transform: translateY(-2px);
+        }
+        /* Responsive hamburger nav */
+        
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        
+        .hamburger,
+        .hamburger::before,
+        .hamburger::after {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            left: 0;
+        }
+        
+        .hamburger::before {
+            top: -7px;
+        }
+        
+        .hamburger::after {
+            top: 7px;
+        }
+        /* Video meta (views/date) */
+        
+        .video-meta {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.98);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                z-index: 999;
+                gap: 0;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links a {
+                padding: 0.75rem 0;
+            }
+            .brand-name {
+                display: none;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                width: 100%;
+                overflow-x: hidden;
+            }
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.8rem;
+            }
+            section {
+                padding: 3rem 1.5rem;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .videos-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .principles {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .quote-block {
+                padding: 2rem 1.5rem;
+                margin: 2rem auto;
+            }
+            .image-slider-container {
+                max-width: 95%;
+                margin: 0 auto;
+            }
+            .image-slider-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 2rem;
+            }
+            .image-slider-prev {
+                left: 0.5rem;
+            }
+            .image-slider-next {
+                right: 0.5rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            footer {
+                width: 100%;
+                padding: 3rem 1.5rem;
+            }
+        }
+        /* ==================== HERO SECTION ==================== */
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+            text-align: center;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 40%, transparent 70%);
+            filter: blur(80px);
+            z-index: 0;
+            animation: glow 4s ease-in-out infinite;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        
+        .hero-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-logo-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            box-shadow: 0 8px 32px rgba(255, 51, 51, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 0 auto;
+            display: block;
+            max-width: 100%;
+            object-fit: cover;
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .hero-logo-img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 40px rgba(255, 51, 51, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: var(--gray);
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 2px solid var(--accent);
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Oswald', sans-serif;
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 51, 51, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 51, 51, 0.4);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes glow {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        
+        section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            position: relative;
+            display: block;
+            width: 100%;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            border-radius: 2px;
+        }
+        /* ==================== BUTTONS & REFINEMENTS ==================== */
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.22s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, var(--accent), #ff6666);
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(255, 51, 51, 0.18);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(255, 51, 51, 0.22);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.06);
+        }
+        
+        .btn-secondary:hover {
+            border-color: rgba(255, 51, 51, 0.7);
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+        /* Slight visual polish for video cards */
+        
+        .video-card {
+            background: linear-gradient(180deg, #0f0f0f, var(--dark-gray));
+            border-radius: 14px;
+            overflow: hidden;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            border: 1px solid rgba(255, 51, 51, 0.06);
+        }
+        
+        .video-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            border-color: rgba(255, 51, 51, 0.18);
+        }
+        /* (removed live-specific mobile rules) */
+        /* ==================== VIDEO GRID ==================== */
+        
+        #videos {
+            background: var(--black);
+            padding: 4rem 2rem;
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .video-card {
+            background: var(--dark-gray);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(255, 51, 51, 0.1);
+        }
+        
+        .video-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(255, 51, 51, 0.4);
+            border-color: var(--accent);
+        }
+        
+        .video-card-content {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            min-height: 250px;
+            background: #111;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .video-card-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        /* Thumbnail preview for videos */
+        
+        .video-thumb {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .video-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .play-button {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #fff;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+        }
+        /* Video modal (overlay) */
+        
+        .video-modal {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            padding: 2rem;
+        }
+        
+        .video-modal.active {
+            display: flex;
+        }
+        
+        .video-modal-content {
+            width: 100%;
+            max-width: 1100px;
+            aspect-ratio: 16/9;
+            background: #000;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+        }
+        
+        .video-modal-close {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+            border: none;
+        }
+        
+        .video-error {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 0, 0, 0.9);
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+            display: none;
+        }
+        
+        .video-error.active {
+            display: block;
+        }
+        
+        .video-card-info {
+            padding: 1.5rem;
+        }
+        
+        .video-card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+        }
+        
+        .video-card-description {
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+        /* ==================== MANIFESTO ==================== */
+        
+        #manifesto {
+            background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+            text-align: center;
+        }
+        
+        .quote-block {
+            margin: 3rem auto;
+            padding: 3rem 2rem;
+            border-left: 4px solid var(--accent);
+            background: rgba(255, 51, 51, 0.05);
+            border-radius: 4px;
+            max-width: 800px;
+            box-sizing: border-box;
+        }
+        
+        .quote-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+            line-height: 1.6;
+        }
+        
+        .quote-author {
+            font-size: 1rem;
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            width: 100%;
+        }
+        
+        .principle {
+            padding: 2rem;
+            background: var(--dark-gray);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 51, 51, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .principle:hover {
+            border-color: var(--accent);
+            background: rgba(255, 51, 51, 0.05);
+        }
+        
+        .principle-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        .principle-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+        }
+        
+        .principle-text {
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+        /* ==================== IMAGE SLIDER ==================== */
+        
+        #gallery {
+            background: var(--black);
+            padding: 4rem 2rem;
+        }
+        
+        .image-slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            aspect-ratio: 2/1;
+            min-height: 400px;
+            background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(255, 51, 51, 0.3);
+            border: 2px solid rgba(255, 51, 51, 0.15);
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .image-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        
+        .image-slide.active {
+            opacity: 1;
+            z-index: 5;
+        }
+        
+        .image-slide img {
+            width: auto;
+            height: auto;
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            margin: 0 auto;
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .image-slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 51, 51, 0.9);
+            border: none;
+            color: var(--white);
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.4);
+        }
+        
+        .image-slider-btn:hover {
+            background: var(--accent);
+            transform: translateY(-50%) scale(1.2);
+            box-shadow: 0 8px 30px rgba(255, 51, 51, 0.6);
+        }
+        
+        .image-slider-prev {
+            left: 2rem;
+        }
+        
+        .image-slider-next {
+            right: 2rem;
+        }
+        
+        .image-slider-dots {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 10;
+        }
+        
+        .image-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .image-dot.active {
+            background: var(--accent);
+            width: 32px;
+            border-radius: 10px;
+            border-color: var(--accent);
+        }
+        
+        .image-dot:hover {
+            background: rgba(255, 255, 255, 0.6);
+        }
+        
+        #cta {
+            background: var(--dark-gray);
+            text-align: center;
+            width: 100%;
+        }
+        
+        .cta-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .cta-description {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        footer {
+            background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-top: 2px solid rgba(255, 51, 51, 0.2);
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .footer-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+        
+        .footer-text {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .footer-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.35rem 0.8rem;
+            font-size: 0.9rem;
+        }
+        
+        .footer-link:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .footer-copyright {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-text">
+            <img src="./images/logo.jpg" alt="FALLING ZERO Logo" style="height: 50px; width: auto; max-width: 100%; margin-right: 1rem; vertical-align: middle;">
+            <span class="brand-name">FALLING ZERO</span>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span class="hamburger"></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#videos">VIDEOS</a>
+            <a href="#manifesto">MANIFESTO</a>
+            <a href="https://www.youtube.com/@fallingzero_1606" target="_blank" class="nav-cta" rel="noopener noreferrer">SUBSCRIBE</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="./images/logo.jpg" alt="FALLING ZERO Logo" class="hero-logo-img">
+            </div>
+            <h1 class="hero-title">FALLING ZERO</h1>
+            <p class="hero-subtitle">BUILD FROM NOTHING. RISE WITH PURPOSE.</p>
+            <p class="hero-description">Discipline, strategy and consistency — practical videos and guidance to build from zero and rise unstoppable.</p>
+            <div class="hero-buttons">
+                <a href="#videos" class="btn btn-primary">START THE JOURNEY</a>
+                <a href="https://www.youtube.com/@fallingzero_1606" target="_blank" class="btn btn-secondary" rel="noopener noreferrer">SUBSCRIBE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos">
+        <h2 class="section-title">LATEST CONTENT</h2>
+        <div class="videos-grid">
+            <div class="video-card">
+                <div class="video-card-content">
+                    <button type="button" class="video-thumb" data-video-id="e6OxCCqHnh0" data-views="1.2M views" data-date="Jan 15, 2026" aria-label="Play THE DISCIPLINE CODE">
+                        <img loading="lazy" src="https://img.youtube.com/vi/e6OxCCqHnh0/hqdefault.jpg" alt="THE DISCIPLINE CODE thumbnail">
+                        <span class="play-button" aria-hidden="true">▶</span>
+                    </button>
+                </div>
+                <div class="video-card-info">
+                    <h3 class="video-card-title">THE DISCIPLINE CODE</h3>
+                    <p class="video-card-description">Master the art of self-discipline and build unbreakable habits.</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-card-content">
+                    <button type="button" class="video-thumb" data-video-id="bH8_Mv00nX4" data-views="890K views" data-date="Jan 10, 2026" aria-label="Play ZERO TO HERO">
+                        <img loading="lazy" src="https://img.youtube.com/vi/bH8_Mv00nX4/hqdefault.jpg" alt="ZERO TO HERO thumbnail">
+                        <span class="play-button" aria-hidden="true">▶</span>
+                    </button>
+                </div>
+                <div class="video-card-info">
+                    <h3 class="video-card-title">ZERO TO HERO</h3>
+                    <p class="video-card-description">The complete transformation blueprint from nothing to everything.</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-card-content">
+                    <button type="button" class="video-thumb" data-video-id="sFydPfuPd0k" data-views="2.1M views" data-date="Jan 5, 2026" aria-label="Play MENTAL WARFARE">
+                        <img loading="lazy" src="https://img.youtube.com/vi/sFydPfuPd0k/hqdefault.jpg" alt="MENTAL WARFARE thumbnail">
+                        <span class="play-button" aria-hidden="true">▶</span>
+                    </button>
+                </div>
+                <div class="video-card-info">
+                    <h3 class="video-card-title">MENTAL WARFARE</h3>
+                    <p class="video-card-description">Win the battle in your mind first. The psychology of champions.</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-card-content">
+                    <button type="button" class="video-thumb" data-video-id="-6y92PkPTa4" aria-label="Play CONSISTENCY OVER TALENT">
+                        <img loading="lazy" src="https://img.youtube.com/vi/-6y92PkPTa4/hqdefault.jpg" alt="CONSISTENCY OVER TALENT thumbnail">
+                        <span class="play-button" aria-hidden="true">▶</span>
+                    </button>
+                </div>
+                <div class="video-card-info">
+                    <h3 class="video-card-title">CONSISTENCY OVER TALENT</h3>
+                    <p class="video-card-description">Why showing up daily beats raw talent every single time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Slider Section -->
+    <section id="gallery">
+        <h2 class="section-title">THE JOURNEY</h2>
+        <div class="image-slider-container">
+            <div class="image-slide active">
+                <img src="./images/opportunity.jpg" alt="The Opportunity - Starting point of the journey" loading="lazy">
+            </div>
+            <div class="image-slide">
+                <img src="./images/power.jpg" alt="With The Power - Gaining strength and momentum" loading="lazy">
+            </div>
+            <div class="image-slide">
+                <img src="./images/skill.jpg" alt="Master The Skill - Developing expertise" loading="lazy">
+            </div>
+            <div class="image-slide">
+                <img src="./images/emotion.jpg" alt="With The Emotion - Emotional mastery and balance" loading="lazy">
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button class="image-slider-btn image-slider-prev" onclick="changeImageSlide(-1)">‹</button>
+            <button class="image-slider-btn image-slider-next" onclick="changeImageSlide(1)">›</button>
+
+            <!-- Navigation Dots -->
+            <div class="image-slider-dots">
+                <span class="image-dot active" onclick="goToImageSlide(0)"></span>
+                <span class="image-dot" onclick="goToImageSlide(1)"></span>
+                <span class="image-dot" onclick="goToImageSlide(2)"></span>
+                <span class="image-dot" onclick="goToImageSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section id="manifesto">
+        <h2 class="section-title">THE MANIFESTO</h2>
+
+        <div class="quote-block">
+            <p class="quote-text">THE ONLY PERSON YOU NEED TO BE BETTER THAN IS THE PERSON YOU WERE YESTERDAY</p>
+            <p class="quote-author">— FALLING ZERO</p>
+        </div>
+
+        <div class="principles">
+            <div class="principle">
+                <div class="principle-number">01</div>
+                <h3 class="principle-title">START NOW</h3>
+                <p class="principle-text">Waiting for the perfect moment is the enemy of progress. The perfect time is always now.</p>
+            </div>
+            <div class="principle">
+                <div class="principle-number">02</div>
+                <h3 class="principle-title">EMBRACE ZERO</h3>
+                <p class="principle-text">Your starting point doesn't define you. Your trajectory and commitment do.</p>
+            </div>
+            <div class="principle">
+                <div class="principle-number">03</div>
+                <h3 class="principle-title">DAILY DISCIPLINE</h3>
+                <p class="principle-text">Success is the sum of small efforts repeated day in and day out without fail.</p>
+            </div>
+            <div class="principle">
+                <div class="principle-number">04</div>
+                <h3 class="principle-title">NO EXCUSES</h3>
+                <p class="principle-text">Excuses are the tools used to build a house of failure and regret.</p>
+            </div>
+        </div>
+
+        <div class="quote-block" style="margin-top: 4rem;">
+            <p class="quote-text">SUFFER THE PAIN OF DISCIPLINE OR SUFFER THE PAIN OF REGRET</p>
+            <p class="quote-author">— THE CHOICE IS YOURS</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta">
+        <h2 class="cta-title">JOIN THE MOVEMENT</h2>
+        <p class="cta-description">Subscribe to FALLING ZERO and transform your life. Explore our latest videos and curated playlists to fuel your journey from zero to legendary.</p>
+        <div class="cta-buttons">
+            <a href="https://www.youtube.com/@fallingzero_1606" target="_blank" class="btn btn-primary">SUBSCRIBE NOW</a>
+            <a href="#videos" class="btn btn-secondary">WATCH VIDEOS</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3 class="footer-title">FALLING ZERO</h3>
+        <p class="footer-text">A movement for those who build from nothing and rise with purpose.</p>
+        <div class="footer-links">
+            <a href="https://www.youtube.com/@fallingzero_1606" target="_blank" class="footer-link" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.instagram.com/fallingzero_officle?utmsource=qr&igsh=cHA5d2J4NHZKNDhv" target="_blank" class="footer-link" rel="noopener noreferrer">Instagram</a>
+            <a href="mailto:contact@fallingzero.com" class="footer-link">Contact</a>
+        </div>
+        <p class="footer-copyright">© 2026 FALLING ZERO. ALL RIGHTS RESERVED.</p>
+    </footer>
+    <!-- Video modal (opened when clicking thumbnails) -->
+    <div class="video-modal" id="videoModal" aria-hidden="true">
+        <div class="video-modal-content" id="videoModalContent">
+            <button class="video-modal-close" id="videoModalClose" aria-label="Close video">✕</button>
+            <div id="videoPlayerContainer" style="width:100%;height:100%;"></div>
+            <div style="position:absolute;left:12px;bottom:12px;right:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+                <div class="video-error" id="videoError" style="flex:1;">Unable to play video. If the video doesn't load, open it on YouTube.</div>
+                <a id="videoFallback" class="btn btn-primary" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', isOpen);
+            });
+
+            // Close menu when clicking a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // Image Slider Functionality
+        // Video thumbnail click -> try inline playback via YouTube IFrame API,
+        // fallback automatically to the YouTube watch page in same tab on error or timeout.
+        function initVideoThumbnails() {
+            const thumbs = document.querySelectorAll('.video-thumb');
+
+            let ytApiReady = false;
+            let ytApiLoading = false;
+            let ytApiPromise = null;
+
+            function loadYouTubeAPI() {
+                if (ytApiReady) return Promise.resolve();
+                if (ytApiPromise) return ytApiPromise;
+                ytApiPromise = new Promise((resolve, reject) => {
+                    if (ytApiLoading) return; // handled by promise
+                    ytApiLoading = true;
+                    const tag = document.createElement('script');
+                    tag.src = 'https://www.youtube.com/iframe_api';
+                    tag.onerror = () => reject(new Error('YouTube API failed to load'));
+                    window.onYouTubeIframeAPIReady = function() {
+                        ytApiReady = true;
+                        resolve();
+                    };
+                    document.head.appendChild(tag);
+                });
+                return ytApiPromise;
+            }
+
+            function navigateToYouTube(id) {
+                if (!id) return;
+                window.location.href = `https://www.youtube.com/watch?v=${id}`;
+            }
+
+            thumbs.forEach(thumb => {
+                thumb.setAttribute('role', 'button');
+                thumb.setAttribute('tabindex', '0');
+
+                function handleClick(e) {
+                    if (e && typeof e.preventDefault === 'function') e.preventDefault();
+                    const id = thumb.dataset.videoId;
+                    if (!id) return;
+                    // Go directly to YouTube - it always works there!
+                    navigateToYouTube(id);
+                }
+
+                thumb.addEventListener('click', handleClick);
+                thumb.addEventListener('keydown', function(ev) {
+                    if (ev.key === 'Enter' || ev.code === 'Space' || ev.key === ' ' || ev.key === 'Spacebar') {
+                        handleClick(ev);
+                    }
+                });
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initVideoThumbnails);
+        } else {
+            initVideoThumbnails();
+        }
+        let currentImageSlide = 0;
+        const imageSlides = document.querySelectorAll('.image-slide');
+        const imageDots = document.querySelectorAll('.image-dot');
+
+        function showImageSlide(index) {
+            imageSlides.forEach(slide => slide.classList.remove('active'));
+            imageDots.forEach(dot => dot.classList.remove('active'));
+
+            if (index >= imageSlides.length) {
+                currentImageSlide = 0;
+            } else if (index < 0) {
+                currentImageSlide = imageSlides.length - 1;
+            } else {
+                currentImageSlide = index;
+            }
+
+            imageSlides[currentImageSlide].classList.add('active');
+            imageDots[currentImageSlide].classList.add('active');
+        }
+
+        function changeImageSlide(direction) {
+            showImageSlide(currentImageSlide + direction);
+        }
+
+        function goToImageSlide(index) {
+            showImageSlide(index);
+        }
+
+        // Auto-advance slider when visible in viewport; pause on hover/focus
+        let autoSlideInterval = null;
+        const AUTO_SLIDE_DELAY = 4000; // ms
+        const sliderContainer = document.querySelector('.image-slider-container');
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            autoSlideInterval = setInterval(() => showImageSlide(currentImageSlide + 1), AUTO_SLIDE_DELAY);
+        }
+
+        function stopAutoSlide() {
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = null;
+            }
+        }
+
+        // start/resume only when slider is at least half visible
+        if (sliderContainer && 'IntersectionObserver' in window) {
+            let isInView = false;
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                        isInView = true;
+                        startAutoSlide();
+                    } else {
+                        isInView = false;
+                        stopAutoSlide();
+                    }
+                });
+            }, {
+                threshold: [0.5]
+            });
+            io.observe(sliderContainer);
+
+            // pause while the user hovers or focuses inside the slider
+            sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+            sliderContainer.addEventListener('mouseleave', () => {
+                if (isInView) startAutoSlide();
+            });
+            sliderContainer.addEventListener('focusin', stopAutoSlide);
+            sliderContainer.addEventListener('focusout', () => {
+                if (isInView) startAutoSlide();
+            });
+        } else if (sliderContainer) {
+            // fallback: always start auto slide
+            startAutoSlide();
+            sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+            sliderContainer.addEventListener('mouseleave', startAutoSlide);
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
